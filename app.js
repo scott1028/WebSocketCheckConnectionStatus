@@ -35,6 +35,7 @@ wss.on('connection', function connection(ws) {
 
 
         //
+        var latency = 1000;  // 預期 1 秒內 pong 就會回應
         var recvPong = true;
         var pingFunc;
 
@@ -52,14 +53,14 @@ wss.on('connection', function connection(ws) {
                 try {
                     ws.ping();
                     console.log('ping!');
-                    setTimeout(pingFunc, 1000);
+                    setTimeout(pingFunc, latency);
                 } catch (e) {
                     closeConnection(ws);
                 }
             } else {
                 closeConnection(ws);
             }
-        }, 1000);
+        }, latency);
 
     })();
 
