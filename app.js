@@ -75,5 +75,8 @@ wss.on('connection', function connection(ws) {
         ws.close();
     };
     
-    ws.send('test!');
+    ws.onopen = function(e){
+        console.log('connected!');
+        ws.send('test!');
+    };
 */
