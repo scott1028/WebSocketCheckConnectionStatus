@@ -65,3 +65,15 @@ wss.on('connection', function connection(ws) {
     })();
 
 });
+
+
+// Client Sample
+/*
+    var ws = new WebSocket('ws://127.0.0.1:8091');
+    ws.onerror=function(e){
+        console.log(e);
+        ws.close();
+    };
+    
+    ws.send('test!');
+*/
