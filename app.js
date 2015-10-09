@@ -1,5 +1,6 @@
 'use strict';
 // Implment a webSocket server with connection status checker.
+// 由於網路不穩定的斷線不會發送 Close Connection 訊號，將造成 ping-pong 延遲，不會斷線，除非到達作業系統 Timout 上限，所以自行實作 Ping-Pong 檢查 Rule。
 
 
 //
