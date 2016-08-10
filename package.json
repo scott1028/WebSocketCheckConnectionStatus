@@ -1,0 +1,22 @@
+{
+  "name": "websocket",
+  "version": "1.0.0",
+  "description": "* Implement WebSocket Connection Status Checker.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scott1028/WebSocketCheckConnectionStatus.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scott1028/WebSocketCheckConnectionStatus/issues"
+  },
+  "homepage": "https://github.com/scott1028/WebSocketCheckConnectionStatus#readme",
+  "dependencies": {
+    "ws": "^1.1.1"
+  }
+}
