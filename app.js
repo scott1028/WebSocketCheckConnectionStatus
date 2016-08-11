@@ -19,7 +19,11 @@ wss.on('connection', function connection(ws) {
 
     //
     ws.on('message', function incoming(message) {
-        console.log('received: %s', message);
+        var afterSecond = Math.random() * 10 * 1000 + 1000;
+        console.log('received: %s, response after %s seconds', message, afterSecond / 1000);
+        setTimeout(function(){
+            ws.send('From Server send: ' + message);
+        }, afterSecond);
     });
 
 
@@ -69,7 +73,7 @@ wss.on('connection', function connection(ws) {
 
 // Client Sample
 /*
-    var ws = new WebSocket('ws://127.0.0.1:8091');
+    var ws = new WebSocket('ws://127.0.0.1:8090');
     ws.onerror=function(e){
         console.log(e);
         ws.close();
@@ -78,5 +82,9 @@ wss.on('connection', function connection(ws) {
     ws.onopen = function(e){
         console.log('connected!');
         ws.send('test!');
+    };
+
+    ws.onmessage = function(e){
+        console.log(e.data);
     };
 */
